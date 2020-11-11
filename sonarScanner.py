@@ -28,7 +28,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 # ************************************************************************************
 def downloadSonarScanner():
 	print("Downloading Sonar-scanner ... \n")
-	zipurl = 'https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-linux.zip'
+	zipurl = 'https://github.com/Abhiknoldur/Sonar-Automation/raw/main/sonar-scanner.zip'
 	with urlopen(zipurl) as zipresp, NamedTemporaryFile() as tfile:
 		tfile.write(zipresp.read())
 		tfile.seek(0)
