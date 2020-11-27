@@ -8,7 +8,7 @@ SonarScanner.py is a script to automate the process of scanning the project and 
 *pip3*
 
 ### Steps to run the script
-1. Generate sonar.properties for your project 
+1. Generate sonar.properties for your project and keep it in the root of the project you are going to scan
 ```
 # must be unique in a given SonarQube instance
 sonar.projectKey=my:project
