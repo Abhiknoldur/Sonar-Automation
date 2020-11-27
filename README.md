@@ -5,10 +5,22 @@ SonarScanner.py is a script to automate the process of scanning the project and 
 ### Pre-requisites
 
 *Python3*
+
 *pip3*
 
+If you don't have above already then run
+```
+sudo apt-get update
+sudo apt install -y python3
+sudo apt-get -y install python3-pip
+```
+
 ### Steps to run the script
-1. Generate sonar.properties for your project and keep it in the root of the project you are going to scan
+1. Clone this repo using
+```
+git clone https://github.com/Abhiknoldur/Sonar-Automation.git
+```
+2. Generate sonar.properties for your project and keep it in the root of the project you are going to scan
 ```
 # must be unique in a given SonarQube instance
 sonar.projectKey=my:project
@@ -26,20 +38,17 @@ sonar.projectKey=my:project
 # Encoding of the source code. Default is default system encoding
 #sonar.sourceEncoding=UTF-8
 ```
-2. Make sure to run following commands before executing the script
+3. Make sure to run following commands before executing the script
 ```
-sudo apt-get update
-sudo apt install -y python3
-sudo apt-get -y install python3-pip
 pip3 install -r requirements.txt
 ```
-3. Command to run the script:
+4. Command to run the script:
 
 ```
 python3 sonarScanner.py
 ```
 
-4. It will ask the project you want to scan
+5. It will ask the project you want to scan
 
 e.g.
 
@@ -47,7 +56,7 @@ e.g.
 Enter the complete path of the project directory
 /home/test-user/ProjectDirectory
 ```
-5. It will ask name of the project, you want to set on SonarQube
+6. It will ask name of the project, you want to set on SonarQube
 
 ```
 Enter the Name of the project  ................
