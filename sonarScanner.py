@@ -1,4 +1,3 @@
-
 #Program to run SonarQube, SonarScanner and ElasticSearch which will scan a repo and provide results.
 
 import sys
@@ -28,7 +27,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 # ************************************************************************************
 def downloadSonarScanner():
 	print("Downloading Sonar-scanner ... \n")
-	zipurl = 'https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-linux.zip'
+	zipurl = 'https://github.com/Abhiknoldur/Sonar-Automation/raw/main/sonar-scanner.zip'
 	with urlopen(zipurl) as zipresp, NamedTemporaryFile() as tfile:
 		tfile.write(zipresp.read())
 		tfile.seek(0)
@@ -73,7 +72,7 @@ def setupProject():
 	print("\nThe repo has been copied in our system .................... \n")
 
 	# Path of the properties file
-	propertiesFilePath = dir_path + '/sonar-scanner/sonar-scanner-4.5.0.2216-linux/conf/sonar-scanner.properties'
+	propertiesFilePath = dir_path + '/sonar-scanner/sonar-scanner/sonar-scanner-4.5.0.2216-linux/conf/sonar-scanner.properties'
 
 	# Reading the properties File and deleting all the contents in them
 
@@ -119,8 +118,9 @@ def setupProject():
 	# Changing the mod for sonarScanner in Unix
 
 	print("\nChanging the mode of sonar Scanner cli ............. \n")
-	subprocess.call("chmod -R 777 ./sonar-scanner/sonar-scanner-4.5.0.2216-linux/bin/sonar-scanner",shell=True)
-	bashCommand = './sonar-scanner/sonar-scanner-4.5.0.2216-linux/bin/sonar-scanner'
+	subprocess.call("chmod -R 777 ./sonar-scanner/sonar-scanner/sonar-scanner-4.5.0.2216-linux/bin/sonar-scanner",shell=True)
+	subprocess.call("chmod +x /sonar-scanner/sonar-scanner/sonar-scanner-4.5.0.2216-linux/jre/bin/java",shell=True)
+	bashCommand = './sonar-scanner/sonar-scanner/sonar-scanner-4.5.0.2216-linux/bin/sonar-scanner'
 
 	print("\nRunning sonarScanner.sh file.\nScanning of " + mname + " repo started ................. \n")
 	# Running the sonarScanner in Unix
@@ -134,7 +134,6 @@ def setupProject():
 #***********************************************************************************************************************
 
 if __name__ == '__main__':
-
 	if sys.platform=="linux1" or sys.platform=="linux2" or sys.platform=="linux":
 		print("Linux recognised ... \n")
 		sonarClidest = dir_path+'/sonar-scanner'
