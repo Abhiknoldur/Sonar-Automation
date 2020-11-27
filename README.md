@@ -1,6 +1,6 @@
 # Sonar-Automation
+SonarScanner.py is a script to automate the process of scanning the project and publish the reports to SonarQube server. This script should be ideally used if your project is not able to use the built in SonarQube plugins for any language.
 
-sonarScanner.py is a script to automate the process of scanning the project and publish the reports to sonarqube if there is your project is not able to use built in sonarQube plugins.
 
 ### Pre-requisites
 
